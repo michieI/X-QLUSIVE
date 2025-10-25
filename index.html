@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>X-QLUSIVE</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        overflow: hidden;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      img {
+        width: 45vw; /* tamaño del logo */
+        max-width: 600px; /* tamaño máximo en pantallas grandes */
+        min-width: 250px; /* tamaño mínimo en móviles */
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <video autoplay muted loop playsinline preload="auto" id="bg-video">
+      <source src="vhs_glitch.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <img src="x-qlusive.png" alt="X-QLUSIVE Logo" />
+  </body>
+</html>
