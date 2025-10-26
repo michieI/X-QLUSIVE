@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>X-QLUSIVE</title>
   <style>
-    /* 🔲 Elimina márgenes y ajusta la vista */
     html, body {
       margin: 0;
       padding: 0;
@@ -14,28 +13,23 @@
       background-color: black;
     }
 
-    /* 🎞️ Fondo con el video VHS */
     video {
       position: fixed;
       top: 50%;
       left: 50%;
       min-width: 100%;
       min-height: 100%;
-      width: auto;
-      height: auto;
       transform: translate(-50%, -50%);
       object-fit: cover;
       z-index: -1;
-      filter: brightness(0.6); /* oscurece un poco el fondo para que el logo resalte */
     }
 
-    /* ✴️ Logo centrado y grande */
     .logo {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 45vw; /* ocupa casi la mitad del ancho de la ventana */
+      width: 45vw;
       max-width: 800px;
       opacity: 1;
     }
@@ -48,13 +42,11 @@
   </style>
 </head>
 <body>
-  <!-- 🎬 Video de fondo -->
   <video autoplay loop muted playsinline>
     <source src="vhs_glitch.mp4" type="video/mp4">
     Tu navegador no soporta video HTML5.
   </video>
 
-  <!-- 🧠 Logo estático, sin animaciones ni brillo -->
   <img src="x-qlusive.png" alt="X-QLUSIVE" class="logo">
 </body>
 </html>
