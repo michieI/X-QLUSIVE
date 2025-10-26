@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>X-QLUSIVE</title>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #000;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-text-size-adjust: none;
+      }
+
+      /* Fondo de video */
+      .video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        opacity: 0.85;
+        filter: brightness(0.9) contrast(1.2);
+      }
+
+      /* Logo grande centrado */
+      .logo {
+        width: min(90vw, 1200px);
+        max-width: 1200px;
+        height: auto;
+        z-index: 2;
+        position: relative;
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.25));
+        margin-bottom: 20px;
+      }
+
+      /* Footer */
+      .footer {
+        position: absolute;
+        bottom: 14px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        opacity: 0.6;
+        color: white;
+        z-index: 2;
+      }
+    </style>
+
+    <script>
+      // Bloqueo de zoom táctil
+      document.addEventListener("gesturestart", (e) => e.preventDefault());
+      document.addEventListener("gesturechange", (e) => e.preventDefault());
+      document.addEventListener("gestureend", (e) => e.preventDefault());
+
+      // Reproducir video automáticamente (Safari/iOS)
+      window.addEventListener("load", () => {
+        const video = document.querySelector(".video-bg");
+        const tryPlay = () => {
+          video.play().catch(() => {
+            document.body.addEventListener("click", () => video.play(), {
+              once: true,
+            });
+          });
+        };
+        tryPlay();
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- 🎞️ Video de fondo -->
+    <video autoplay loop muted playsinline class="video-bg">
+      <source src="vhs_glitch.mp4" type="video/mp4" />
+    </video>
+
+    <!-- 🧠 Logo principal -->
+    <img class="logo" src="x-qlusive.png" alt="X-QLUSIVE logo" />
+
+    <!-- ⚖️ Footer -->
+    <div class="footer">© 2026 X-QLUSIVE GROUP. All Rights Reserved.</div>
+  </body>
+</html>
