@@ -6,30 +6,28 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>X-QLUSIVE</title>
-    <meta
-      name="description"
-      content="X-QLUSIVE — Creating the global platform for arts, entertainment and nightlife."
-    />
+    <title>X-QLUSIVE — Creating the global platform for arts, entertainment and nightlife</title>
 
+    <!-- 🧩 FAVICONES -->
     <link rel="icon" type="image/x-icon" href="x_black_bg.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="x_black_bg.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="x_black_bg.png" />
     <link rel="apple-touch-icon" href="x_black_bg.png" />
     <meta name="theme-color" content="#000000" />
 
+    <!-- 🧠 META DESCRIPCIÓN -->
     <meta
-      property="og:title"
-      content="X-QLUSIVE — Creating the global platform for arts, entertainment and nightlife"
+      name="description"
+      content="X-QLUSIVE — Creating the global platform for arts, entertainment and nightlife."
     />
     <meta
-      property="og:description"
+      property="og:title"
       content="X-QLUSIVE — Creating the global platform for arts, entertainment and nightlife."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://x-qlusive.com" />
     <meta property="og:image" content="x_black_bg.png" />
+    <meta property="og:locale" content="es_ES" />
 
     <style>
       html,
@@ -46,6 +44,7 @@
         -webkit-text-size-adjust: none;
       }
 
+      /* 🎞️ Fondo de video */
       .video-bg {
         position: fixed;
         top: 0;
@@ -58,9 +57,10 @@
         filter: brightness(0.9) contrast(1.2);
       }
 
+      /* 🧠 Logo centrado */
       .logo {
-        width: min(90vw, 1200px);
-        max-width: 1200px;
+        width: 70%;
+        max-width: 1400px;
         height: auto;
         z-index: 2;
         position: relative;
@@ -69,10 +69,12 @@
     </style>
 
     <script>
+      // 🚫 Bloqueo de zoom táctil
       document.addEventListener("gesturestart", (e) => e.preventDefault());
       document.addEventListener("gesturechange", (e) => e.preventDefault());
       document.addEventListener("gestureend", (e) => e.preventDefault());
 
+      // ▶️ Reproducir video automáticamente (Safari/iOS)
       window.addEventListener("load", () => {
         const video = document.querySelector(".video-bg");
         const tryPlay = () => {
@@ -88,10 +90,12 @@
   </head>
 
   <body>
+    <!-- 🎬 Video de fondo -->
     <video autoplay loop muted playsinline class="video-bg">
       <source src="vhs_glitch.mp4" type="video/mp4" />
     </video>
 
-    <img class="logo" src="x-qlusive.png" alt="X-QLUSIVE logo" />
+    <!-- 💡 Logo principal -->
+    <img class="logo" src="X [White].png" alt="X-QLUSIVE logo" />
   </body>
 </html>
