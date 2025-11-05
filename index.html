@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <title>X-QLUSIVE</title>
 
@@ -13,19 +13,6 @@
     <link rel="icon" type="image/png" sizes="192x192" href="x_black_bg.png" />
     <link rel="apple-touch-icon" href="x_black_bg.png" />
     <meta name="theme-color" content="#000000" />
-
-    <meta
-      name="description"
-      content="X-QLUSIVE — Creating the Global Platform for Arts, Entertainment and Nightlife."
-    />
-    <meta
-      property="og:title"
-      content="X-QLUSIVE — Creating the Global Platform for Arts, Entertainment and Nightlife."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://x-qlusive.com" />
-    <meta property="og:image" content="x_black_bg.png" />
-    <meta property="og:locale" content="es_ES" />
 
     <style>
       html,
@@ -40,7 +27,6 @@
         -webkit-user-select: none;
         user-select: none;
         -webkit-text-size-adjust: none;
-        touch-action: none; /* 🔒 Previene zoom en todos los navegadores */
       }
 
       .video-bg {
@@ -54,23 +40,30 @@
         opacity: 0.85;
         filter: brightness(0.9) contrast(1.2);
       }
-
-      .logo {
-        width: 70%;
-        max-width: 1400px;
-        height: auto;
-        z-index: 2;
-        position: relative;
-        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.25));
-      }
     </style>
+
+    <script>
+      document.addEventListener("gesturestart", (e) => e.preventDefault());
+      document.addEventListener("gesturechange", (e) => e.preventDefault());
+      document.addEventListener("gestureend", (e) => e.preventDefault());
+
+      window.addEventListener("load", () => {
+        const video = document.querySelector(".video-bg");
+        const tryPlay = () => {
+          video.play().catch(() => {
+            document.body.addEventListener("click", () => video.play(), {
+              once: true,
+            });
+          });
+        };
+        tryPlay();
+      });
+    </script>
   </head>
 
   <body>
     <video autoplay loop muted playsinline class="video-bg">
       <source src="vhs_glitch.mp4" type="video/mp4" />
     </video>
-
-    <img class="logo" src="X [White].png" alt="X-QLUSIVE logo" />
   </body>
 </html>
